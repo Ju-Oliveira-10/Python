@@ -1,0 +1,13 @@
+#Exercise 4: Login System
+users = {"alice": "1234", "bob": "abcd"}
+
+while True:
+    username = input("Enter the username or exit: ")
+    if username == "exit":
+        break
+    password = input("Enter the password: ")
+    if username in users and password == users[username]:
+        print("Access granted")
+        break
+    else:
+        print("Access denied. Try again.")

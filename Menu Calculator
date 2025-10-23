@@ -1,0 +1,25 @@
+#Exercise 1: Menu Calculator
+#Create a program that shows a menu:
+#Add two numbers
+#Subtract two numbers
+#Quit
+
+def add(a,b):
+    print(a+b)
+
+def subtract(a,b):
+    print(a-b)
+
+while True:
+    numb1 = float(input("Enter a number: "))
+    numb2 = float(input("Enter a number: "))
+    operation = input("Choose the operation +/-:")
+    if operation == "+":
+        add(numb1,numb2)
+        break
+    elif operation == "-":
+        subtract(numb1,numb2)
+        break
+    else:
+        print("EROOR")
+        break

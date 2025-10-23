@@ -1,0 +1,12 @@
+#Exercise 3: Function to Check Even or Odd
+#Write a function is_even(n) and use it inside a loop that asks for numbers until the user types 0.
+
+def is_even(n):
+    return n % 2 == 0
+
+while True:
+    number = int(input("Enter a number: "))
+    if is_even(number):
+        print("The number is even")
+    else:
+        print("The number is odd")

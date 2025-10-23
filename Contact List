@@ -1,0 +1,25 @@
+#Exercise 5: Contact List Manager (simplified)
+#Use functions for actions add and view and a while loop for control.
+
+contacts = {}
+
+def add_contact():
+    name = input("Name:")
+    phone = input("Phone number:")
+    contacts[name] = phone
+
+def view_contacts():
+    for name, phone in contacts.items():
+        print(f"{name}:{phone}")
+
+while True:
+    choice = input("\n1.Add, 2.View, 3.Quit")
+    if choice == "3":
+        break
+    elif choice == "1":
+        add_contact()
+        print("Contact added")
+    elif choice == "2":
+        view_contacts()
+    else:
+        break

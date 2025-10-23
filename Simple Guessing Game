@@ -1,0 +1,16 @@
+#Exercise 2: Simple Guessing Game
+#Use a while loop to let the user guess until they get it right.
+import random
+
+secret = random.randint(0,10)
+
+while True:
+    number = int(input("Guess the number:"))
+    if number == secret:
+        print("You win")
+        break
+    elif number < secret:
+        print("Too low")
+    else:
+        print("Too high")
+

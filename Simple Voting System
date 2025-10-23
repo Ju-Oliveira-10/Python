@@ -1,0 +1,21 @@
+#4. Simple Voting System
+#Ask users to vote for their favorite programming language.
+#At the end, show who won.
+
+votes = {}
+
+while True:
+    lang = input("Vote in your favorite programming language or done:")
+    if lang.lower() == "done":
+        break
+    votes[lang.lower()] = votes.get(lang.lower(), 0)+1
+
+print("\nVoting Results:")
+
+for lang, count in votes.items():
+    print(f"{lang} : {count}")
+
+if votes:
+    winner = max(votes, key=votes.get)
+    print(f"\nThe winner is: {winner}")
+

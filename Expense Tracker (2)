@@ -1,0 +1,38 @@
+#1. Personal Expense Tracker (CLI app)
+#Goal: build a command-line app that helps you manage your spending.
+
+import csv
+
+def add_expense():
+    category = input("Category:")
+    description = input("Description:")
+    amount = input("Amount:")
+    
+    with open("expenses.csv", "a", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow([category, description, amount])
+    print("Expense added")
+
+def view_expenses():
+    try:
+        with open("expenses.csv", "r") as f:
+            reader = csv.reader(f)
+            total = 0
+            for row in reader:
+                # skip empty rows or headers
+                if not row or row[2].lower() == "amount":
+                    continue
+                print(row)
+                total += float(row[2])
+            print("Total spent:", total)
+    except FileNotFoundError:
+        print("No expenses yet!")
+
+while True:
+    choice = input("\n1. Add  2. View  3. Quit: ")
+    if choice == "1":
+        add_expense()
+    elif choice == "2":
+        view_expenses()
+    else:
+        break

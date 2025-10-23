@@ -1,0 +1,20 @@
+#Exercise 3: Expense Tracker
+expenses = {}
+
+while True:
+    category = input("\nCategory or done: ")
+    if category == "done":
+        break
+    else:
+        amount = float(input("Amount: "))
+        expenses[category] = expenses.get(category, 0)+ amount
+
+print("\nExpenses by category: ")
+for category, amount in expenses.items():
+    print(f"{category} : {amount}€")
+
+total_spent = sum(expenses.values())
+max_spent = max(expenses, key=expenses.get)
+
+print(f"\nTotal spent: {total_spent}€")
+print(f"Highest spendind category: {max_spent}, {expenses[max_spent]}€")

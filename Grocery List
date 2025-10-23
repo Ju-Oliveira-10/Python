@@ -1,0 +1,15 @@
+#2. Grocery List
+#Ask the user for grocery items until they type "done".
+#If the same item is entered again, increase its quantity.
+
+grocery_list = {}
+
+while True:
+    item = input("Enter a item or done: ")
+    if item.lower() == "done":
+        break
+    grocery_list[item.lower()] = grocery_list.get(item.lower(), 0) + 1
+
+print("Grocery List:")
+for item, qty in grocery_list.items():
+    print(f"{item}, {qty}")

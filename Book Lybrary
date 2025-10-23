@@ -1,0 +1,28 @@
+#Book Lybrary
+books = {}
+
+while True:
+    choice = input("\n1.Add 2.View 3.Remove 4.Search 4.Quit")
+    if choice == "5":
+        break
+    elif choice == "1":
+        title = input("Title: ").lower()
+        author = input("Author: ")
+        books[title] = author
+        print("\nBook added")
+    elif choice == "2":
+        print(books)
+    elif choice == "3":
+        rem_title = input("Title for remove: ").lower()
+        if rem_title in books:
+            books_up = books.pop(rem_title)     
+        else:
+            print("This book don't exist in the dictionary")
+    elif choice == "4":
+        search = input("Title of the book: ").lower()
+        if search in books:
+            print(f"{search.title()} : {books[search]}")
+    else:
+        break
+
+

@@ -1,0 +1,31 @@
+#2. To-Do List Manager
+#Goal: create a small app to manage daily tasks.
+
+tasks = []
+
+def add_tasks():
+    task = input("Enter a task: ")
+    tasks.append({"tasks": task, "done": False})
+
+def show_tasks():
+    if not tasks:
+        print("No tasks yet")
+    for i, t in enumerate(tasks, 1):
+        status = "✅" if t["done"] else "❌"
+        print(f"{i}. {t["tasks"]}:{status}")
+
+def mark_done():
+    show_tasks()
+    num = int(input("Task number to mark done:")) -1
+    tasks[num]["done"] = True
+    
+while True:
+    choise = input("\n1. Add  2. View  3. Mark_done: ")
+    if choise == "1":
+        add_tasks()
+    elif choise == "2":
+        show_tasks()
+    elif choise == "3":
+        mark_done()
+    else:
+        break

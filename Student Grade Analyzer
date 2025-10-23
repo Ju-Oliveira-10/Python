@@ -1,0 +1,22 @@
+#Exercise 2: Student Grade 
+students = {}
+
+while True:
+    choice = input("\n 1.Add  2. View Average  3.Highest/Lowest grade 5.Quit : ")
+    if choice == "4":
+        break
+    elif choice == "1":
+        name = input("Name student: ")
+        grade = float(input("Grade: "))
+        students[name] = grade
+        print("Student grade added")
+    elif choice == "2":
+        avg = sum(students.values())/len(students)
+        print("The average grades is", {avg})
+    elif choice == "3":
+        TopStudent = max(students, key=students.get)
+        LowStudent = min(students, key=students.get)
+        print(f"The highest grade is {students[TopStudent]} from {TopStudent}")
+        print(f"The lowest grade is {students[LowStudent]} from {LowStudent}")
+    else:
+        break

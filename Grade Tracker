@@ -1,0 +1,21 @@
+#3. Grade Tracker
+#Store subjects and grades in a dictionary.
+#At the end, show the average and best subject.
+
+grades = {}
+
+while True:
+    subject = input("Subject or done: ")
+    if subject.lower() == "done":
+        break
+    grade = float(input("Grade: "))
+    grades[subject] = grade
+
+for sub, gr in grades.items():
+    print(f"{sub}:{gr}")
+
+avg = sum(grades.values())/len(grades)
+best = max(grades, key=grades.get)
+
+print("Average: ", avg)
+print(f"Best grade- {best} ({grades[best]})")

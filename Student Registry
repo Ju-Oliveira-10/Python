@@ -1,0 +1,23 @@
+#5. Student Registry
+#Keep track of students’ names and ages.
+#Let the user view all students or search by name.
+
+students = {}
+
+while True:
+    print("\n1.Add, 2.View, 3. Search, 4.Quit")
+    choice = input("Choose:")
+    if choice == "1":
+        name = input("Student name:")
+        age = int(input("Age:"))
+        students[name]=age
+        print("\nThe student added")
+    elif choice == "2":
+        for name, age in students.items():
+            print(f"{name} : {age}")
+    elif choice == "3":
+        search = input("\nStudente name: ")
+        if search in students:
+            print(f"{search} : {students[search]}")
+    else:
+        break

@@ -1,0 +1,27 @@
+#1. Movie Ratings
+#Ask the user to enter movie names and ratings (1–5). Store them in a dictionary.
+#Then show all movies and their average rating.
+
+movies = {}
+
+def add_movie():
+    movie_name = input("The name of the movie: ")
+    if movie_name.lower() == "q":
+        return False
+    movie_name = movie_name.lower()
+    movie_rating = float(input("The rating of the movie (1-5): "))
+    if movie_name in movies:
+        movies[movie_name].append(movie_rating)
+    else:
+        movies[movie_name] = [movie_rating]
+    return True
+
+def show_movies():
+    for movie_name, movie_rating in movies.items():
+        avg = sum(movie_rating)/len(movie_rating)
+        print(f"{movie_name}: {avg}")
+
+while add_movie():
+    pass
+
+show_movies()
